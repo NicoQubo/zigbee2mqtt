@@ -149,9 +149,7 @@ export default class MQTT {
 
         if (!skipLog) {
             logger.info(`MQTT publish: topic '${topic}', payload '${payload}'`);
-            logger.info(payload);
-            logger.info(typeof payload);
-            if (JSON.parse(payload).action === 'fall') {
+            if (payload.indexOf('fall') > -1) {
                 logger.info('Aaaaaaaaaahhhhh');
             }
         }
